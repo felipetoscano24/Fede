@@ -1,0 +1,593 @@
+:root {
+    --main-c: #00a365;
+    --border-r: .4rem;
+}
+
+
+/** Estilos Generales **/
+
+html * {
+    margin: 0;
+    padding: 0;
+    font-family: "League Spartan", sans-serif !important;
+    transition: all 0.3s ease-in-out;
+}
+
+h1 {
+    font-size: 9vh !important;
+    padding: 2rem 0 !important;
+}
+
+h2 {
+    font-size: 6vh !important;
+    color: var(--main-c) !important;
+    margin: 20px 0 !important;
+}
+
+h3 {
+    font-size: 4vh !important;
+}
+
+p {
+    font-size: 3vh;
+    font-weight: 500;
+    color: white;
+}
+
+body {
+    background: black !important;
+}
+
+h1, h3 {
+    text-shadow: 0 0 10px var(--main-c), 0 0 20px var(--main-c), 0 0 40px var(--main-c);
+    transition: text-shadow 0.3s ease-in-out;
+}
+
+h1:hover, h2:hover, h3:hover {
+    color: whitesmoke !important;
+    text-shadow: 0 0 15px white, 0 0 30px var(--main-c), 0 0 50px var(--main-c);
+    transform: scale(1.02)
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h1, h2, h3 {
+    animation: fadeInUp 1.5s ease-out;
+}
+
+video,img {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+video:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 10px var(--main-c);
+}
+
+img:hover {
+    transform: scale(1.1);
+}
+.foto-fede:hover{
+    transform: scale(1);
+}
+
+
+/** Header **/
+
+.header {
+    height: 8vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.25rem;
+    box-shadow: 0px 0px 20px 0.1px #9e9e9e80;
+    /** para que quede fijo **/
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    background-color: rgb(0, 0, 0); /* o el color de fondo que quieras */
+}
+
+.logo-header {
+    height: 13vh;
+}
+
+.menu-navegacion {
+    display: flex;
+    padding-right: 1rem;
+    margin: 0 !important;
+}
+
+.menu-navegacion li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none !important;
+    font-size: 2vh;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+.boton-header {
+    color: #fff;
+    font-weight: 600;
+    font-size: 2.1vh;
+    background: linear-gradient(to right, #00a365, #065134);
+    padding: 9px;
+    border-radius: var(--border-r);
+}
+
+.nav-bar {
+    font-size: 2.05vh;
+    font-weight: 700;
+    padding: 9px;
+    margin-right: 35px;
+    border-radius: var(--border-r);
+    color: var(--main-c);
+}
+
+.nav-bar:hover {
+    color: #fff;
+    background: linear-gradient(to right, #00a365, #065134);
+}
+
+.boton-header:hover {
+    background: linear-gradient(to left, #00e28c, #0e8658);
+}
+
+
+/** Fede **/
+
+#fede {
+    position: relative;
+    height: 78vh;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    box-shadow: inset 10px -15px 20px 0.01px #00a36480;
+}
+
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.15;
+    z-index: -1;    /* Para que el video esté detrás del contenido */
+}
+
+.foto-fede {
+    height: 55vh;
+    align-self: flex-end;
+}
+
+.contenedor-fede {
+    max-width: 70vw;
+    color: #fff;
+    margin-left: 10px;
+}
+
+.contenedor-fede p {
+    margin: 2rem 0;
+}
+
+.contenedor-fede b {
+    font-size: 4vh;
+    font-style: italic;
+}
+
+.botón-accion {
+    padding: 1.5rem 0;
+}
+
+.boton {
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.5rem;
+    background: linear-gradient(to left, #00a365, #065134);
+    padding: .5rem 1rem;
+    border: solid white 2px;
+    border-radius: var(--border-r);
+}
+
+.boton:hover {
+    transform: scale(1.2);
+    background: linear-gradient(to left, #00e28c, #0e8658);
+}
+
+
+/** Info Fede **/
+
+#info-fede {
+    display: grid;
+    grid-template-columns: 1.5fr 2fr;
+    padding: 2rem 0;
+}
+
+.contenedor-info-fede {
+    padding: 3rem;
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+}
+
+.video-presentacion {
+    position: relative;
+    width: auto;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.9;
+}
+
+.contenedor-info-fede video {
+    width: 100vh;
+    border: solid var(--main-c) 2px;
+}
+
+.datos-fede h2 {
+    padding-bottom: 2.5rem;
+}
+
+.datos-fede h2:hover{
+    color: var(--main-c) !important;
+    text-shadow: 0 0 15px black, 0 0 30px var(--main-c), 0 0 50px var(--main-c);
+}
+
+.datos-fede b{
+    text-shadow: 0 0 15px #ffffff85, 0 0 30px var(--main-c), 0 0 50px var(--main-c);
+    color: rgb(255, 255, 255);
+}
+
+.datos-fede p {
+    padding-bottom: 2rem;
+    font-size: 2.9vh;
+}
+
+
+/** Motion & Animation **/
+
+#motion-animation {
+    margin: 5vh 0 10vh;
+}
+
+.titulo-motion-animation {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10vh;
+}
+
+.contenedor-motion-animation {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    color: white;
+    gap: 8vh;
+    justify-content: center;
+    padding: 0 20vh;
+}
+
+.contenedor-motion-animation video,
+.contenedor-motion-animation iframe {
+    transition: all 0.3s ease;
+    border: solid var(--main-c) 3px;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+}
+
+
+/** Social Media **/
+
+#social-media {
+    background-color: #0e0e0e;
+    padding: 7vh 0 10vh;
+}
+
+.titulo-social-media {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 7vh;
+}
+
+.titulo-social-media h2 {
+    color: whitesmoke !important;
+}
+
+.contenedor-social-media {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    color: white;
+    gap: 8vh;
+    justify-content: center;
+    padding: 0 20vh;
+}
+
+.contenedor-social-media video {
+    object-fit: cover;
+    transition: all 0.3s ease;
+    border: solid var(--main-c) 3px;
+    width: 100%;
+    height: 75vh;
+}
+
+
+/** Commercial & Advertising **/
+
+#commercial-advertising {
+    margin: 5vh 0 15vh;
+}
+
+.titulo-commercial-advertising {
+    display: flex;
+    justify-content: center;
+    margin: 7vh;
+}
+
+.contenedor-commercial-advertising {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    color: white;
+    gap: 8vh;
+    justify-content: center;
+    padding: 0 20vh;
+}
+
+.contenedor-commercial-advertising video {
+    object-fit: cover;
+    transition: all 0.3s ease;
+    border: solid var(--main-c) 3px;
+    width: 100%;
+    height: 75vh;
+}
+
+
+/** Corporate & Business **/
+
+#corporate-business {
+    margin: 5vh 0 15vh;
+}
+
+.titulo-corporate-business {
+    display: flex;
+    justify-content: center;
+    margin: 7vh;
+}
+
+.titulo-corporate-business h2 {
+    color: whitesmoke !important;
+}
+
+.contenedor-corporate-business {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    color: white;
+    gap: 8vh;
+    justify-content: center;
+    padding: 0 20vh;
+}
+
+.contenedor-corporate-business video {
+    object-fit: cover;
+    transition: all 0.3s ease;
+    border: solid var(--main-c) 3px;
+    width: 100%;
+    height: 75vh;
+}
+
+
+/** Banner **/
+
+.banner video {
+    height: 70vh;
+    width: 100%;
+    object-fit: cover;
+}
+
+
+
+
+
+/** Tecnologías **/
+
+.tecnologias {
+    text-align: center;
+    background-color: #046e46;
+    color: white;
+    padding: 5vh 0;
+  }
+  
+  .tecnologias h2 {
+    color: white !important;
+    padding-bottom: 3vh;
+  }
+  
+  .tecnologias p {
+    padding: 2rem 20vh;
+  }
+  
+  /* Carrusel */
+  .carousel-wrapper {
+    overflow: hidden;
+    background-color: #035536;
+    padding: 2vh 0;
+    position: relative;
+  }
+  
+  .carousel-track {
+    display: flex;
+    animation: scroll 60s linear infinite;
+    width: max-content;
+  }
+  
+  .logo-brand {
+    height: 18vh;
+    width: auto;
+    flex-shrink: 0;
+    margin: 4vh 9.5vh;
+    opacity: 0.8;
+    transition: transform 0.3s ease, filter 0.3s ease;
+  }
+  
+  .logo-brand:hover {
+    transform: scale(1.1);
+    filter: grayscale(0);
+    opacity: 1;
+  }
+  
+  .fade-edges {
+    position: relative;
+  }
+  
+  /* Degradado izquierdo */
+  .fade-edges::before,
+  .fade-edges::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 80px;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none; /* permite interactuar con los elementos debajo */
+  }
+  
+  .fade-edges::before {
+    left: 0;
+    background: linear-gradient(to right, #066641, transparent);
+  }
+  
+  .fade-edges::after {
+    right: 0;
+    background: linear-gradient(to left, #066641, transparent);
+  }
+
+  
+  /* Animación fluida de scroll horizontal */
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  
+
+/** CONTACTO **/
+
+#contacto {
+    display: flex;
+    align-items: center;
+}
+
+.contenedor-contacto {
+    max-width: 50vw;
+    color: #fff;
+    padding: 7%;
+}
+
+.contenedor-contacto p {
+    margin-bottom: 3vh;
+}
+
+.contenedor-contacto h2 {
+    color: white !important;
+    padding-bottom: 6vh;
+}
+
+
+/** Footer **/
+
+
+.footer {
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #ffffff;
+    padding: 0.25rem;
+}
+
+.logo-footer {
+    height: 10vh;
+}
+
+.iconos {
+    display: flex;
+    padding-right: 1rem;
+}
+
+.iconos li {
+    list-style: none;
+}
+
+.social-logo {
+    height: 4.5vh;
+    margin: 0 1vw;
+}
+
+
+/* Responsive */
+
+@media (max-width: 768px) {
+    .menu-navegacion {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .info-empresa,
+    .tecnologias {
+        padding: 2rem 1rem;
+    }
+
+    .info-empresa .contenedor-info-empresa,
+    .tecnologias .contenedor {
+        flex: 1 1 100%;
+    }
+
+    .contenedor-servicios,
+    .contenedor-testimonios {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contenedor2,
+    .contenedor3 {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .empresa h1 {
+        font-size: 2.5rem;
+    }
+
+    .empresa p {
+        font-size: 1rem;
+    }
+
+    .boton-accion a {
+        padding: 0.5rem 1rem;
+    }
+}
