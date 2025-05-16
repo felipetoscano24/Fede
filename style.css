@@ -150,6 +150,20 @@ li {
     background: linear-gradient(to left, #00e28c, #0e8658);
 }
 
+.traductor-logo img {
+  height: 12vh; /* adaptado al alto del header */
+  object-fit: contain;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+}
+
+.traductor-logo img:hover {
+    transform: scale(1);
+}
+
 
 /** Fede **/
 
