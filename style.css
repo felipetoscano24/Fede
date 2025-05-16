@@ -64,7 +64,7 @@ h1, h2, h3 {
     animation: fadeInUp 1.5s ease-out;
 }
 
-video,img {
+video,img, iframe {
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
@@ -287,7 +287,6 @@ li {
     transition: all 0.3s ease;
     border: solid var(--main-c) 3px;
     width: 100%;
-    height: auto;
     aspect-ratio: 16 / 9;
 }
 
@@ -326,6 +325,64 @@ li {
     height: 75vh;
 }
 
+.iframe-wrapper {
+  position: relative;
+  overflow: hidden;
+  border: solid var(--main-c) 3px;
+  transition: transform 0.3s ease;
+}
+
+.iframe-wrapper:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 0px 10px var(--main-c);
+  z-index: 2;
+}
+
+.iframe-wrapper iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border: none;
+  pointer-events: auto;
+  transition: transform 0.3s ease;
+}
+
+
+/* SHORTS VERTICALES */
+.iframe-vertical {
+  height: 80vh;
+  width: 100%;
+}
+.iframe-vertical iframe {
+  width: 100vw;
+  height: 110vh;
+  transform: translate(-50%, -50%);
+}
+
+/* VIDEOS HORIZONTALES (YouTube estándar) */
+.iframe-horizontal {
+  height: 60vh;
+}
+
+.iframe-horizontal iframe {
+  width: 70vw;
+  height: 60vh;
+  transform: translate(-50%, -50%);
+  aspect-ratio: unset;
+}
+
+
+/* VIDEOS CUADRADOS o 4:5 */
+.iframe-cuadrado {
+  height: 75vh;
+  width: 75vh;
+}
+.iframe-cuadrado iframe {
+  width: 100vw;
+  height: 75vh;
+  transform: translate(-50%, -50%);
+}
+
 
 /** Commercial & Advertising **/
 
@@ -348,12 +405,8 @@ li {
     padding: 0 20vh;
 }
 
-.contenedor-commercial-advertising video {
-    object-fit: cover;
-    transition: all 0.3s ease;
-    border: solid var(--main-c) 3px;
-    width: 100%;
-    height: 75vh;
+.contenedor-commercial-advertising .iframe-wrapper {
+    justify-self: center;
 }
 
 
@@ -376,20 +429,19 @@ li {
 .contenedor-corporate-business {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    color: white;
     gap: 8vh;
-    justify-content: center;
     padding: 0 20vh;
-}
-
+    align-items: stretch;
+    transition: grid-template-columns 0.4s ease;
+  }
+  
 .contenedor-corporate-business video {
     object-fit: cover;
-    transition: all 0.3s ease;
+    transition: all 0.4s ease;
     border: solid var(--main-c) 3px;
     width: 100%;
     height: 75vh;
 }
-
 
 /** Banner **/
 
@@ -398,10 +450,6 @@ li {
     width: 100%;
     object-fit: cover;
 }
-
-
-
-
 
 /** Tecnologías **/
 
