@@ -76,6 +76,7 @@ video:hover {
 img:hover {
     transform: scale(1.1);
 }
+
 .foto-fede:hover{
     transform: scale(1);
 }
@@ -204,7 +205,6 @@ nav{
 
 .contenedor-fede b {
     font-size: 4vh;
-    font-style: italic;
 }
 
 .botón-accion {
@@ -570,6 +570,58 @@ nav{
 .contenedor-contacto h2 {
     color: white !important;
     padding-bottom: 6vh;
+}
+
+.iconos-contacto-final {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  padding: 4vh 0;
+  background-color: black;
+}
+
+.iconos-contacto-final a {
+  font-size: 4vh;
+  color: var(--main-c);
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.iconos-contacto-final a:hover {
+  transform: scale(1.05);
+  color: white;
+}
+
+.icono-mail img, .icono-whatsapp img{
+    height: 27vh;
+    margin-left: 80px;
+}
+
+.icono-mail img, .icono-whatsapp img{
+    transform: scale(1);
+}
+
+
+/** Whatsapp **/
+
+.icono-whatsapp-flotante img{
+    height: 7vh;
+}
+#whatsapp-fixed {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25d366;
+  color: white;
+  font-size: 3.5vh;
+  padding: 10px;
+  border-radius: 50%;
+  z-index: 10000;
+  box-shadow: 0 0 10px #25d366;
+  transition: transform 0.3s ease;
+}
+
+#whatsapp-fixed:hover {
+  transform: scale(1.2);
 }
 
 
