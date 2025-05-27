@@ -558,13 +558,14 @@ nav{
 }
 
 .contenedor-contacto {
-    max-width: 50vw;
+    width: 50vw;
     color: #fff;
     padding: 7%;
 }
 
 .contenedor-contacto p {
     margin-bottom: 3vh;
+    font-size: x-large;
 }
 
 .contenedor-contacto h2 {
@@ -575,9 +576,8 @@ nav{
 .iconos-contacto-final {
   display: flex;
   justify-content: center;
-  gap: 3rem;
   padding: 4vh 0;
-  background-color: black;
+  gap: 80px;
 }
 
 .iconos-contacto-final a {
@@ -587,17 +587,22 @@ nav{
 }
 
 .iconos-contacto-final a:hover {
-  transform: scale(1.05);
+  transform: scale(1.07);
   color: white;
 }
 
-.icono-mail img, .icono-whatsapp img{
-    height: 27vh;
-    margin-left: 80px;
+.icono-mail img, .icono-whatsapp img, .icono-linkedin img{
+    height: 22vh;
 }
 
-.icono-mail img, .icono-whatsapp img{
-    transform: scale(1);
+.fondo-contacto {
+    position: absolute;
+    width: 95%;
+    height: 70%;
+    object-fit: cover;
+    opacity: 0.08;
+    transform: scale(1.1);
+    z-index: -1;    /* Para que el video esté detrás del contenido */
 }
 
 
