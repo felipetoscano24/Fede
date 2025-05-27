@@ -210,7 +210,7 @@
 
       <div class="iframe-wrapper iframe-vertical">
         <iframe 
-          src="https://www.youtube.com/embed/Krp3fkln1dE?autoplay=1&mute=1&playsinline=1&loop=1&playlist=Krp3fkln1dE&modestbranding=1&controls=0&rel=0&cc_load_policy=0"
+          src="https://www.youtube.com/embed/21DLozfCvdc?autoplay=1&mute=1&playsinline=1&loop=1&playlist=21DLozfCvdc&modestbranding=1&controls=0&rel=0&cc_load_policy=0"
           frameborder="0" 
           allow="autoplay; encrypted-media" 
           allowfullscreen>
@@ -228,7 +228,7 @@
 
       <div class="iframe-wrapper iframe-vertical">
         <iframe 
-          src="https://www.youtube.com/embed/Krp3fkln1dE?autoplay=1&mute=1&playsinline=1&loop=1&playlist=Krp3fkln1dE&modestbranding=1&controls=0&rel=0&cc_load_policy=0"
+          src="https://www.youtube.com/embed/dgRUVAixYUg?autoplay=1&mute=1&playsinline=1&loop=1&playlist=dgRUVAixYUg&modestbranding=1&controls=0&rel=0&cc_load_policy=0"
           frameborder="0" 
           allow="autoplay; encrypted-media" 
           allowfullscreen>
@@ -286,7 +286,7 @@
         <img src="img/mail.png" alt="mail">
       </a>
 
-      <a href="https://wa.me/5491123456789" target="_blank" class="icono-whatsapp">
+      <a href="https://wa.me/5491135740193" target="_blank" class="icono-whatsapp">
         <img src="img/whatsapp.png" alt="whatsapp">
       </a>
 
@@ -298,8 +298,21 @@
     
   </section>
 
-  
+
+  <div id="mensaje-fullscreen" class="mensaje-flotante">
+    <p>✨ Tocá 2 veces cualquier video para pantalla completa 📱</p>
+    <span class="cerrar-mensaje" onclick="cerrarMensaje()">✖</span>
+  </div>
+
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+  <div>
+    <a href="https://wa.me/5491135740193" target="_blank" id="whatsapp-fixed" class="icono-whatsapp-flotante">
+      <img src="img/whatsapp.png" alt="whatsapp">
+    </a>
+  </div>
+
   
   <script>
     let currentLang = 'en';
@@ -313,37 +326,54 @@
         if (nuevoTexto) el.innerHTML = nuevoTexto;
       });
     });
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const contacto = document.getElementById("contacto");
+      const whatsappFixed = document.getElementById("whatsapp-fixed");
+
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            whatsappFixed.style.opacity = "0";
+            whatsappFixed.style.pointerEvents = "none";
+          } else {
+            whatsappFixed.style.opacity = "1";
+            whatsappFixed.style.pointerEvents = "auto";
+          }
+        });
+      }, { threshold: 0.3 });
+
+      observer.observe(contacto);
+    });
+
+    function cerrarMensaje() {
+      const mensaje = document.getElementById("mensaje-fullscreen");
+      mensaje.classList.remove("visible");
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const mensaje = document.getElementById("mensaje-fullscreen");
+      const infoFede = document.getElementById("info-fede");
+      let mensajeMostrado = false;
+
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting && !mensajeMostrado) {
+            mensajeMostrado = true;
+            setTimeout(() => {
+              mensaje.classList.add("visible");
+              setTimeout(() => cerrarMensaje(), 15000);
+            }, 15000); // Espera 15 segundos antes de mostrar el cartel
+          }
+        });
+      }, {
+        threshold: 0.3,
+        rootMargin: "-20% 0px 0px 0px"
+      });
+
+      observer.observe(infoFede);
+    });
   </script>
 
-  <div>
-    <a href="https://wa.me/5491123456789" target="_blank" id="whatsapp-fixed" class="icono-whatsapp-flotante">
-      <img src="img/whatsapp.png" alt="whatsapp">
-    </a>
-  </div>
-
-  <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const contacto = document.getElementById("contacto");
-    const whatsappFixed = document.getElementById("whatsapp-fixed");
-
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          whatsappFixed.style.opacity = "0";
-          whatsappFixed.style.pointerEvents = "none";
-        } else {
-          whatsappFixed.style.opacity = "1";
-          whatsappFixed.style.pointerEvents = "auto";
-        }
-      });
-    }, { threshold: 0.3 });
-
-    observer.observe(contacto);
-  });
-</script>
-
-
-
 </body>
-
 </html>

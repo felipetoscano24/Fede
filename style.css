@@ -476,10 +476,10 @@ nav{
   
   .tecnologias h2 {
     color: white !important;
-    padding-bottom: 3vh;
   }
   
   .tecnologias p {
+    font-size: x-large;
     padding: 2rem 20vh;
   }
   
@@ -626,6 +626,51 @@ nav{
 }
 
 #whatsapp-fixed:hover {
+  transform: scale(1.2);
+}
+
+
+/** Cartel flotante **/
+
+.mensaje-flotante {
+  position: fixed;
+  top: 12vh;
+  right: 4vw;
+  background: rgba(0, 163, 100, 0.76);
+  color: white;
+  padding: 1rem;
+  border-radius: 12px;
+  font-size: 2.2vh;
+  z-index: 10001;
+  box-shadow: 0 0 15px rgba(0, 163, 100, 0.555);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(100%);
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  max-width: 90vw;
+}
+
+.mensaje-flotante p{
+    margin-bottom: 0;
+}
+
+.mensaje-flotante.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(0);
+}
+
+.cerrar-mensaje {
+  cursor: pointer;
+  font-size: 1.2rem;
+  margin-left: auto;
+}
+
+
+.cerrar-mensaje:hover {
   transform: scale(1.2);
 }
 
