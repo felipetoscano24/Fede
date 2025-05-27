@@ -302,6 +302,8 @@ nav{
     border: solid var(--main-c) 3px;
     width: 100%;
     aspect-ratio: 16 / 9;
+    object-fit: cover;
+    height: 60vh;
 }
 
 
@@ -417,6 +419,14 @@ nav{
     gap: 8vh;
     justify-content: center;
     padding: 0 20vh;
+}
+
+.contenedor-commercial-advertising video {
+    object-fit: cover;
+    transition: all 0.3s ease;
+    border: solid var(--main-c) 3px;
+    width: 100%;
+    height: 75vh;
 }
 
 .contenedor-commercial-advertising .iframe-wrapper {
