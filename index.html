@@ -106,11 +106,11 @@
 
     <div class="contenedor-motion-animation">
 
-      <video autoplay loop muted>
+      <video class="video-custom" poster="img/poster-video.png">
         <source src="https://res.cloudinary.com/dpwdzcrbe/video/upload/v1746045571/ewobrct6nmrokspr2x6a.mp4" type="video/mp4" />
       </video>
 
-      <video autoplay loop muted>
+      <video class="video-custom" poster="img/poster-video.png">
         <source src="https://res.cloudinary.com/dpwdzcrbe/video/upload/v1746045571/ewobrct6nmrokspr2x6a.mp4" type="video/mp4" />
       </video>
 
@@ -127,15 +127,15 @@
 
     <div class="contenedor-social-media">
 
-      <video autoplay loop muted>
+      <video class="video-custom" poster="img/poster-video.png">
         <source src="https://res.cloudinary.com/dpwdzcrbe/video/upload/v1746045597/lzvhuzs0kzabpiy2wcdx.mov" type="video/mp4" />
       </video>
 
-      <video autoplay loop muted>
+      <video class="video-custom" poster="img/poster-video.png">
         <source src="https://res.cloudinary.com/dpwdzcrbe/video/upload/v1746045548/uc8d3lhz9c0qlkokox6z.mp4" type="video/mp4" />
       </video>
 
-      <video autoplay loop muted>
+      <video class="video-custom" poster="img/poster-video.png">
         <source src="https://res.cloudinary.com/dpwdzcrbe/video/upload/v1746122361/MAQUILLAJE_txuset.mp4" type="video/mp4" />
       </video>
 
@@ -152,11 +152,11 @@
 
     <div class="contenedor-commercial-advertising">
 
-      <video autoplay loop muted>
+      <video class="video-custom" poster="img/poster-video.png">
         <source src="https://res.cloudinary.com/dpwdzcrbe/video/upload/v1746045601/crx1huqyuwkyz2uyn3gn.mp4" type="video/mp4" />
       </video>
 
-      <video autoplay loop muted>
+      <video class="video-custom" poster="img/poster-video.png">
         <source src="https://res.cloudinary.com/dpwdzcrbe/video/upload/v1746045589/vue2fqrrobhvl0mirp8u.mp4" type="video/mp4" />
       </video>
 
@@ -173,15 +173,15 @@
 
     <div class="contenedor-corporate-business">
 
-      <video autoplay loop muted>
+      <video class="video-custom" poster="img/poster-video.png">
         <source src="https://res.cloudinary.com/dpwdzcrbe/video/upload/v1746045577/ajso41rtjrxep0quqpxs.mov" type="video/mp4" />
       </video>
 
-      <video autoplay loop muted>
+      <video class="video-custom" poster="img/poster-video.png">
         <source src="https://res.cloudinary.com/dpwdzcrbe/video/upload/v1746045589/cni9xetgp8d9ys1dxqul.mp4" type="video/mp4" />
       </video>
 
-      <video autoplay loop muted>
+      <video class="video-custom" poster="img/poster-video.png">
         <source src="https://res.cloudinary.com/dpwdzcrbe/video/upload/v1746045612/rvpzikxsmnbvia9x4kw1.mov" type="video/mp4" />
       </video>
 
@@ -258,7 +258,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
   
-  <div>
+  <div id="icono-wpp">
     <a href="https://wa.me/5491135740193" target="_blank" id="whatsapp-fixed" class="icono-whatsapp-flotante">
       <img src="img/whatsapp.png" alt="whatsapp">
     </a>
@@ -324,6 +324,42 @@
 
       observer.observe(infoFede);
     });
+  document.addEventListener("DOMContentLoaded", () => {
+    const videos = document.querySelectorAll("video.video-custom");
+
+    videos.forEach(video => {
+      let reproducido = false;
+
+      video.addEventListener("click", () => {
+        // Al primer clic: reproducir y mostrar controles
+        if (!reproducido) {
+          video.play();
+          video.setAttribute("controls", "controls");
+          video.setAttribute("controlsList", "nofullscreen");
+          reproducido = true;
+        } else {
+          // Toggle play/pause
+          if (video.paused) {
+            video.play();
+          } else {
+            video.pause();
+          }
+        }
+      });
+
+      // Permitir que si se pausa con botón, no desaparezcan los controles
+      video.addEventListener("pause", () => {
+        video.setAttribute("controls", "controls");
+      });
+
+      // Evitar que se reproduzca automáticamente por bucles raros
+      video.addEventListener("ended", () => {
+        reproducido = false;
+        video.removeAttribute("controls");
+      });
+    });
+  });
+
   </script>
 
 </body>

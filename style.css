@@ -639,6 +639,12 @@ nav{
   transform: scale(1.2);
 }
 
+video.video-custom {
+  object-fit: cover;
+  cursor: pointer;
+}
+
+
 
 /** Cartel flotante **/
 
@@ -657,7 +663,7 @@ nav{
   pointer-events: none;
   transform: translateX(100%);
   transition: opacity 1s ease-in-out, transform 1s ease-in-out;
-  display: flex;
+  display: none;
   align-items: center;
   gap: 1rem;
   max-width: 90vw;
@@ -678,7 +684,6 @@ nav{
   font-size: 1.2rem;
   margin-left: auto;
 }
-
 
 .cerrar-mensaje:hover {
   transform: scale(1.2);
@@ -717,51 +722,164 @@ nav{
 
 
 /* Responsive */
-
+/* TABLET - max-width: 768px */
 @media (max-width: 768px) {
-    .menu-navegacion {
-        flex-direction: column;
-        gap: 1rem;
-    }
+  h1 { font-size: 5vh !important; }
+  h2 { font-size: 4vh !important; }
+  h3, p { font-size: 2.5vh !important; }
 
-    .info-empresa,
-    .tecnologias {
-        padding: 2rem 1rem;
-    }
+  .header {
+    flex-direction: column;
+    height: auto;
+    padding: 1rem 0.5rem;
+  }
 
-    .info-empresa .contenedor-info-empresa,
-    .tecnologias .contenedor {
-        flex: 1 1 100%;
-    }
+  .logo-header {
+    height: 8vh;
+  }
 
-    .contenedor-servicios,
-    .contenedor-testimonios {
-        flex-direction: column;
-        align-items: center;
-    }
+  .menu-navegacion {
+    flex-direction: column;
+    padding: 0;
+    gap: 1rem;
+  }
 
-    .contenedor2,
-    .contenedor3 {
-        flex: 1 1 100%;
-        max-width: 100%;
-    }
+  .nav-bar, .boton-header {
+    margin-right: 0;
+    padding: 0.5rem 1rem;
+    font-size: 2vh;
+  }
+
+  #fede {
+    flex-direction: column;
+    height: auto;
+    padding: 2vh;
+    text-align: center;
+  }
+
+  .contenedor-fede {
+    max-width: 90vw;
+    margin-left: 0;
+  }
+
+  .foto-fede {
+    height: 40vh;
+  }
+
+  #info-fede {
+    grid-template-columns: 1fr;
+    padding: 2vh;
+  }
+
+  .contenedor-info-fede video {
+    width: 90vw;
+  }
+
+  .contenedor-motion-animation,
+  .contenedor-commercial-advertising,
+  .contenedor-social-media,
+  .contenedor-corporate-business {
+    grid-template-columns: 1fr;
+    padding: 0 5vw;
+  }
+
+  .contenedor-motion-animation video,
+  .contenedor-commercial-advertising video,
+  .contenedor-social-media video,
+  .contenedor-corporate-business video {
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+
+  .iframe-vertical,
+  .iframe-horizontal,
+  .iframe-cuadrado {
+    height: auto !important;
+    width: 100% !important;
+  }
+
+  .iframe-vertical iframe,
+  .iframe-horizontal iframe,
+  .iframe-cuadrado iframe {
+    width: 100vw;
+    height: 60vh;
+    transform: translate(-50%, -50%);
+  }
+
+  .contenedor-contacto {
+    width: 90vw;
+    padding: 2rem;
+  }
+
+  .iconos-contacto-final {
+    flex-direction: column;
+    gap: 2vh;
+  }
+
+  .icono-mail img,
+  .icono-whatsapp img,
+  .icono-linkedin img {
+    height: 12vh;
+  }
+
+  .mensaje-flotante {
+    top: 10vh;
+    right: 2vw;
+    font-size: 2vh;
+  }
+
+  .footer {
+    flex-direction: column;
+    height: auto;
+    padding: 1vh;
+  }
+
+  .logo-footer {
+    height: 6vh;
+  }
+
+  .iconos {
+    padding: 0.5rem;
+  }
+
+  .social-logo {
+    height: 3vh;
+  }
 }
 
+/* CELULARES - max-width: 480px */
 @media (max-width: 480px) {
-    header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
+  h1 { font-size: 4vh !important; }
+  h2 { font-size: 3.5vh !important; }
+  p { font-size: 2.2vh !important; }
 
-    .empresa h1 {
-        font-size: 2.5rem;
-    }
+  .boton {
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+  }
 
-    .empresa p {
-        font-size: 1rem;
-    }
+  .carousel-track {
+    animation-duration: 40s;
+  }
 
-    .boton-accion a {
-        padding: 0.5rem 1rem;
-    }
+  .logo-brand {
+    height: 10vh;
+    margin: 3vh;
+  }
+
+  .fade-edges::before,
+  .fade-edges::after {
+    width: 40px;
+  }
+
+  .mensaje-flotante {
+    font-size: 1.8vh;
+    padding: 0.5rem;
+  }
+
+  #whatsapp-fixed {
+    font-size: 2.5vh;
+    height: auto;
+    width: auto;
+  }
 }
