@@ -212,7 +212,9 @@ nav {
     object-fit: cover;
     opacity: 0.15;
     z-index: -1;
-    pointer-events: none;
+    pointer-events: none !important;
+    user-select: none !important;
+    -webkit-user-drag: none !important;
 }
 
 .foto-fede {
