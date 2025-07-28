@@ -312,6 +312,7 @@ nav {
     display: flex;
     justify-content: center;
     margin-bottom: 10vh;
+    padding: 0px 10px;
 }
 
 .contenedor-motion-animation {
@@ -978,18 +979,27 @@ video.video-custom {
         gap: 4%;
     }
 
+    .contenedor-corporate-business-2 {
+        padding: 0 5vw !important;
+    }
+
+    #corporate-business {
+        margin-bottom: 3vh !important;
+    }
+
     #video-thermo-fisher{
         width: 100% !important;
-        margin-bottom: 70px;
+        height: auto;
+        margin-bottom: 5vh;
         margin-top: 8vh;
     }
 
     .carousel-track {
-        animation: scroll 10s linear infinite;
+        animation-duration: 15s;
     }
 
     .tecnologias p {
-        padding: 10px !important;
+        padding: 3vh !important;
     }
 
     #contacto {
