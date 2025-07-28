@@ -21,10 +21,18 @@
 </head>
 
 <body>
+
   <header class="header">
 
     <div class="logo">
       <a href="#fede"><img src="img/logo-pd.png" alt="Logo" class="logo-header" /></a>
+    </div>
+
+    <div class="traductor-hamburguesa">
+      <div id="translate-toggle" title="Traducir" style="cursor: pointer;" class="traductor-logo">
+        <img src="img/traductor.png" alt="">
+      </div>
+      <div class="hamburguesa" onclick="toggleMenu()">☰</div>
     </div>
 
     <nav>
@@ -40,14 +48,9 @@
             data-es="EMPRESARIAL">CORPORATE</a></li>
         <li><a href="#contacto" class="boton-header traducible" data-en="CONTACT" data-es="CONTACTO">CONTACT</a></li>
       </ul>
-
-      <div id="translate-toggle" title="Traducir" style="cursor: pointer;" class="traductor-logo">
-        <img src="img/traductor.png" alt="">
-      </div>
     </nav>
 
   </header>
-
 
   <section id="fede">
 
@@ -302,6 +305,7 @@
 
 
   <script>
+
     let currentLang = 'en';
 
     document.getElementById('translate-toggle').addEventListener('click', function () {
@@ -360,6 +364,7 @@
 
       observer.observe(infoFede);
     });
+
     document.addEventListener("DOMContentLoaded", () => {
       const videos = document.querySelectorAll("video.video-custom");
 
@@ -393,6 +398,17 @@
           reproducido = false;
           video.removeAttribute("controls");
         });
+      });
+    });
+
+    function toggleMenu() {
+      const menu = document.querySelector(".menu-navegacion");
+      menu.classList.toggle("visible");
+    }
+
+    document.querySelectorAll('.menu-navegacion a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.querySelector('.menu-navegacion').classList.remove('visible');
       });
     });
 

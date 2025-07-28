@@ -162,13 +162,26 @@ li {
 
 .traductor-logo img {
     height: 12vh;
-    /* adaptado al alto del header */
     object-fit: contain;
 }
 
 nav {
     display: flex;
     align-items: center;
+}
+
+.traductor-hamburguesa {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-right: 1rem;
+}
+
+.hamburguesa {
+  display: none;
+  font-size: 5vh;
+  cursor: pointer;
+  color: var(--main-c);
 }
 
 .traductor-logo img:hover {
@@ -743,6 +756,46 @@ video.video-custom {
 /* Responsive */
 /* TABLET - max-width: 768px */
 @media (max-width: 768px) {
+
+    .menu-navegacion {
+        display: none;
+        flex-direction: column;
+        background-color: black;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        z-index: 9999;
+        padding: 1rem 0;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .menu-navegacion.visible {
+        display: flex;
+    }
+
+    .hamburguesa {
+        display: block;
+    }
+
+    .header {
+        height: 8vh;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .traductor-hamburguesa {
+        display: flex;
+        align-items: center;
+        padding-left: 7rem;
+    }
+
+    .logo-header {
+        height: 8vh;
+        transform: scale(1.2);
+    }
+
     h1 {
         font-size: 5vh !important;
     }
@@ -761,31 +814,36 @@ video.video-custom {
     }
 
     .header {
-        flex-direction: column;
-        height: auto;
-        padding: 1rem 0.5rem;
+        flex-direction: row;
+        padding: 0;
     }
 
     .logo-header {
         height: 8vh;
     }
 
+    .traductor-logo img{
+        height: 10vh !important;
+    }
+
     .menu-navegacion {
         flex-direction: column;
         padding: 0;
         gap: 1rem;
+        text-align: end;
     }
 
     .nav-bar,
     .boton-header {
         margin-right: 0;
         padding: 0.5rem 1rem;
-        font-size: 2vh;
+        font-size: 1.6vh;
     }
 
     #fede {
         flex-direction: column;
         height: auto;
+        margin-top: 8vh;
         padding: 2vh;
         text-align: center;
         box-shadow: inset 0px 0px 20px 3px #00a36480;
@@ -803,7 +861,11 @@ video.video-custom {
     }
 
     .foto-fede {
-        height: 40vh;
+        height: 30vh;
+        align-self: auto;
+        position: absolute;
+        top: 260px;
+        left: -15px;
     }
 
     #info-fede {
