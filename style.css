@@ -200,6 +200,7 @@ nav {
     align-items: center;
     justify-content: left;
     box-shadow: inset 10px -15px 20px 0.01px #00a36480;
+    overflow: hidden;
 }
 
 .video-background {
@@ -211,7 +212,7 @@ nav {
     object-fit: cover;
     opacity: 0.15;
     z-index: -1;
-    /* Para que el video esté detrás del contenido */
+    pointer-events: none;
 }
 
 .foto-fede {
@@ -847,7 +848,7 @@ video.video-custom {
 
     #fede {
         flex-direction: column;
-        height: auto;
+        height: 80vh;
         margin-top: 8vh;
         padding: 2vh;
         text-align: center;
@@ -869,8 +870,13 @@ video.video-custom {
         height: 30vh;
         align-self: auto;
         position: absolute;
+        transform: scaleX(-1);
         top: 260px;
         left: -15px;
+    }
+
+    .boton-accion{
+        text-align: start;
     }
 
     #info-fede {
@@ -980,6 +986,9 @@ video.video-custom {
 
     .social-logo {
         height: 3vh;
+    }
+    .icono-whatsapp-flotante img {
+        height: 5vh;
     }
 }
 
