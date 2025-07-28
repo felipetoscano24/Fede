@@ -873,6 +873,10 @@ video.video-custom {
         box-shadow: inset 0px 0px 20px 3px #00a36480;
     }
 
+    .video-background {
+        opacity: 0.1;
+    }
+
     .contenedor-fede {
         max-width: 90vw;
         margin-bottom: 30px;
@@ -907,6 +911,10 @@ video.video-custom {
         padding: 2vh;
     }
 
+    .datos-fede h2 {
+        padding-top: 2.5rem;
+    }
+
     .contenedor-info-fede {
         padding: 0;
         text-align: center;
@@ -925,7 +933,7 @@ video.video-custom {
     .contenedor-social-media,
     .contenedor-corporate-business {
         grid-template-columns: 1fr;
-        padding: 0 5vw;
+        padding: 0 5vw 3vh;
     }
 
     .contenedor-social-media video,
@@ -954,16 +962,16 @@ video.video-custom {
         transform: translate(-50%, -50%);
     }
 
-    #commercial-advertising {
-        margin: 0;
-    }
-
     #motion-animation {
-        margin-bottom: 5vh;
+        margin: 5vh 0 0vh;
     }
 
     #social-media {
-        padding-bottom: 5vh;
+        padding-bottom: 3vh !important;
+    }
+
+    #commercial-advertising {
+        margin: 0;
     }
 
     .contenedor-corporate-business {
