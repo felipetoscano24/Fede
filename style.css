@@ -481,10 +481,10 @@ nav {
 
 .contenedor-corporate-business {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 8vh;
+    grid-template-columns: 1fr 1fr;
     padding: 0 20vh;
-    align-items: stretch;
+    align-items: center;
+    justify-items: center;
     transition: grid-template-columns 0.4s ease;
 }
 
@@ -492,8 +492,26 @@ nav {
     object-fit: cover;
     transition: all 0.4s ease;
     border: solid var(--main-c) 3px;
+    width: 65%;
+    height: 75vh;
+}
+
+.contenedor-corporate-business-2 {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 0 35vh;
+    align-items: center;
+    justify-items: center;
+    transition: grid-template-columns 0.4s ease;
+}
+
+.contenedor-corporate-business-2 video {
+    object-fit: cover;
+    transition: all 0.4s ease;
+    border: solid var(--main-c) 3px;
     width: 100%;
     height: 75vh;
+    margin-top: 8vh;
 }
 
 /** Banner **/
@@ -808,7 +826,7 @@ video.video-custom {
         text-shadow: 0 0 10px var(--main-c), 0 0 20px var(--main-c), 0 0 40px var(--main-c);
         color: whitesmoke !important;
         text-align: center;
-        margin: 0;
+        margin: 0 !important;
     }
 
     h3,
@@ -870,13 +888,18 @@ video.video-custom {
         height: 30vh;
         align-self: auto;
         position: absolute;
-        transform: scaleX(-1);
-        top: 260px;
-        left: -15px;
+        bottom: 0;
+        left: 20px;
+    }
+    
+    .foto-fede:hover {
+        transform: none !important;
+        pointer-events: none;
     }
 
     .boton-accion{
-        text-align: start;
+        text-align: end;
+        margin: 65px 30px;
     }
 
     #info-fede {
@@ -905,12 +928,15 @@ video.video-custom {
         padding: 0 5vw;
     }
 
-    .contenedor-motion-animation video,
-    .contenedor-commercial-advertising video,
     .contenedor-social-media video,
     .contenedor-corporate-business video {
-        height: auto;
-        aspect-ratio: 16 / 9;
+        height: 65vh;
+        width: 100%;
+    }
+
+    .contenedor-motion-animation video,
+    .contenedor-commercial-advertising video {
+        height: 40vh;
     }
 
     .iframe-vertical,
@@ -926,6 +952,28 @@ video.video-custom {
         width: 100vw;
         height: 60vh;
         transform: translate(-50%, -50%);
+    }
+
+    #commercial-advertising {
+        margin: 0;
+    }
+
+    #motion-animation {
+        margin-bottom: 5vh;
+    }
+
+    #social-media {
+        padding-bottom: 5vh;
+    }
+
+    .contenedor-corporate-business {
+        gap: 4%;
+    }
+
+    #video-thermo-fisher{
+        width: 100% !important;
+        margin-bottom: 70px;
+        margin-top: 8vh;
     }
 
     .carousel-track {
@@ -946,7 +994,7 @@ video.video-custom {
     }
 
     .contenedor-contacto h2{
-        padding-bottom: 3vh;
+        padding: 5vh 0;
     }
 
     .iconos-contacto-final {

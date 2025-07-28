@@ -127,12 +127,12 @@
 
     <div class="contenedor-motion-animation">
 
-      <video class="video-custom" poster="img/poster-video.png">
+      <video class="video-custom" poster="img/wealth-mgya.jpg">
         <source src="https://res.cloudinary.com/dpwdzcrbe/video/upload/v1746045571/ewobrct6nmrokspr2x6a.mp4"
           type="video/mp4" />
       </video>
 
-      <video class="video-custom" poster="img/poster-video.png">
+      <video class="video-custom" poster="img/wealth-mgya.jpg">
         <source src="https://res.cloudinary.com/dpwdzcrbe/video/upload/v1746045571/ewobrct6nmrokspr2x6a.mp4"
           type="video/mp4" />
       </video>
@@ -150,17 +150,17 @@
 
     <div class="contenedor-social-media">
 
-      <video class="video-custom" poster="img/poster-video.png">
+      <video class="video-custom" poster="img/clinica-sm_004.jpg">
         <source src="https://res.cloudinary.com/dpwdzcrbe/video/upload/v1746045597/lzvhuzs0kzabpiy2wcdx.mov"
           type="video/mp4" />
       </video>
 
-      <video class="video-custom" poster="img/poster-video.png">
+      <video class="video-custom" poster="img/malasangre-sm.jpg">
         <source src="https://res.cloudinary.com/dpwdzcrbe/video/upload/v1746045548/uc8d3lhz9c0qlkokox6z.mp4"
           type="video/mp4" />
       </video>
 
-      <video class="video-custom" poster="img/poster-video.png">
+      <video class="video-custom" poster="img/maquillaje-sm.jpg">
         <source src="https://res.cloudinary.com/dpwdzcrbe/video/upload/v1746122361/MAQUILLAJE_txuset.mp4"
           type="video/mp4" />
       </video>
@@ -179,12 +179,12 @@
 
     <div class="contenedor-commercial-advertising">
 
-      <video class="video-custom" poster="img/poster-video.png">
+      <video class="video-custom" poster="img/radiant-cya.jpg">
         <source src="https://res.cloudinary.com/dpwdzcrbe/video/upload/v1746045601/crx1huqyuwkyz2uyn3gn.mp4"
           type="video/mp4" />
       </video>
 
-      <video class="video-custom" poster="img/poster-video.png">
+      <video class="video-custom" poster="img/mecuid-cya.jpg">
         <source src="https://res.cloudinary.com/dpwdzcrbe/video/upload/v1746045589/vue2fqrrobhvl0mirp8u.mp4"
           type="video/mp4" />
       </video>
@@ -203,18 +203,22 @@
 
     <div class="contenedor-corporate-business">
 
-      <video class="video-custom" poster="img/poster-video.png">
+      <video class="video-custom" poster="img/jove-cyb_002.jpg">
         <source src="https://res.cloudinary.com/dpwdzcrbe/video/upload/v1746045577/ajso41rtjrxep0quqpxs.mov"
           type="video/mp4" />
       </video>
 
-      <video class="video-custom" poster="img/poster-video.png">
-        <source src="https://res.cloudinary.com/dpwdzcrbe/video/upload/v1746045589/cni9xetgp8d9ys1dxqul.mp4"
+      <video class="video-custom" poster="img/remax-cyb.jpg">
+        <source src="https://res.cloudinary.com/dpwdzcrbe/video/upload/v1746045612/rvpzikxsmnbvia9x4kw1.mov"
           type="video/mp4" />
       </video>
 
-      <video class="video-custom" poster="img/poster-video.png">
-        <source src="https://res.cloudinary.com/dpwdzcrbe/video/upload/v1746045612/rvpzikxsmnbvia9x4kw1.mov"
+    </div>
+
+    <div class="contenedor-corporate-business-2">
+
+      <video id="video-thermo-fisher" class="video-custom" poster="img/thermofisher-cyb.jpg">
+        <source src="https://res.cloudinary.com/dpwdzcrbe/video/upload/v1746045589/cni9xetgp8d9ys1dxqul.mp4"
           type="video/mp4" />
       </video>
 
@@ -412,6 +416,21 @@
       link.addEventListener('click', () => {
         document.querySelector('.menu-navegacion').classList.remove('visible');
       });
+    });
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const videoFondo = document.querySelector(".video-background");
+
+      if (videoFondo) {
+        videoFondo.addEventListener("click", e => e.preventDefault());
+        videoFondo.addEventListener("play", e => {
+          if (videoFondo.paused) videoFondo.play();
+        });
+        videoFondo.addEventListener("pause", e => {
+          e.preventDefault();
+          videoFondo.play();
+        });
+      }
     });
 
   </script>
